@@ -24,8 +24,8 @@ class CustomButton<T extends ButtonStyleButton> extends StatelessWidget {
   Widget build(BuildContext context) {
     final ButtonStyle style = FilledButton.styleFrom(
       padding: padding,
-      backgroundColor: backgroundColor,
-      foregroundColor: foregroundColor,
+      // backgroundColor: backgroundColor,
+      // foregroundColor: foregroundColor,
       textStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(4))),

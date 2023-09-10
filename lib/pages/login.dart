@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
-
-import '../common_widget/CustomButton.dart';
+import 'package:flutter_huntfish_ca/common_widget/CustomButton.dart';
+import 'package:flutter_huntfish_ca/i18n/strings.g.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final t = Translations.of(context);
     final screenSize = MediaQuery.of(context).size;
     return Column(
       children: [
-        Image.asset(
-          "assets/images/login_splash.jpg",
-          height: screenSize.height * 0.5,
-          width: double.infinity,
-          fit: BoxFit.cover,
+        Expanded(
+          child: Image.asset(
+            "assets/images/login_splash.jpg",
+            height: screenSize.height * 0.5,
+            width: double.infinity,
+            fit: BoxFit.cover,
+          ),
         ),
         Container(
           color: Colors.white,
@@ -23,7 +26,7 @@ class Login extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Live Life Outside",
+                t.lifeLife,
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w500,
@@ -59,6 +62,9 @@ class Login extends StatelessWidget {
             ],
           ),
         ),
+        SizedBox(
+          height: 40,
+        )
       ],
     );
   }
