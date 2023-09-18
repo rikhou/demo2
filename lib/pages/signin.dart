@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_huntfish_ca/common_widget/CustomButton.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -9,8 +10,19 @@ class SignIn extends StatelessWidget {
       margin: EdgeInsets.fromLTRB(10, 60, 10, 20),
       child: Column(
         children: [
-          Text("data"),
+          const Text(
+            "Sign In",
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+          ),
           TextField(),
+          TextField(),
+          CustomButton(
+            onPressed: () {},
+            text: "Sign In",
+            padding: const EdgeInsets.symmetric(vertical: 15),
+            margin: const EdgeInsets.symmetric(vertical: 10),
+            width: double.infinity,
+          ),
         ],
       ),
     );

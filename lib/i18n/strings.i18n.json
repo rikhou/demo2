@@ -2,5 +2,8 @@
   "lifeLife": "Live Life Outside",
   "app": {
     "title": "Flutter Demo"
+  },
+  "signIn": {
+    "signIn": "Sign In"
   }
 }
