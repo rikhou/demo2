@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_huntfish_ca/common_widget/CustomButton.dart';
+import 'dart:io';
 
+import 'package:flutter/material.dart';
+import '../common_widget/CustomButton.dart';
 import '../common_widget/CustomText.dart';
 
 class SignIn extends StatelessWidget {
@@ -9,32 +10,46 @@ class SignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10, 60, 10, 20),
+      margin: EdgeInsets.fromLTRB(10, 100, 10, 20),
       child: Column(
         children: [
           const Text(
             "Sign In",
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
           ),
+          const SizedBox(
+            height: 20,
+          ),
           CustomeText(
             label: "User ID",
-            labelText: "Please Entry Email: xx@xx.com",
+            hintText: "Please Entry Email: xx@xx.com",
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           CustomeText(
             label: "Password",
-            labelText: "Please Entry",
+            hintText: "Please Entry",
             obscureText: true,
             suffix: TextButton(
               onPressed: () {},
-              child: const Text("Show"),
+              child: const Text(
+                "Show",
+                style: TextStyle(fontSize: 14),
+              ),
             ),
           ),
-          TextButton(
-            onPressed: () {},
-            child: Text("Forgot Password?"),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              TextButton(
+                onPressed: () {},
+                child: const Text("Forgot Password?"),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 10,
           ),
           CustomButton(
             onPressed: () {},
@@ -43,6 +58,13 @@ class SignIn extends StatelessWidget {
             margin: const EdgeInsets.symmetric(vertical: 10),
             width: double.infinity,
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              const Text("Don't have an account?"),
+              TextButton(onPressed: () {}, child: const Text("Create Account"))
+            ],
+          )
         ],
       ),
     );

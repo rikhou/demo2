@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 class CustomeText extends StatelessWidget {
   final String label;
-  final String? labelText;
+  final String? hintText;
   final bool obscureText;
   final Widget? suffix;
 
   const CustomeText({
     super.key,
     required this.label,
-    this.labelText,
+    this.hintText,
     this.obscureText = false,
     this.suffix,
   });
@@ -25,9 +25,8 @@ class CustomeText extends StatelessWidget {
         TextField(
           decoration: InputDecoration(
             border: OutlineInputBorder(),
-            contentPadding: EdgeInsets.all(10.0),
-            // icon: Icon(Icons.person),
-            labelText: labelText,
+            contentPadding: EdgeInsets.all(5),
+            hintText: hintText,
             suffix: suffix,
           ),
           obscureText: obscureText,
