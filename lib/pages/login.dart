@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_huntfish_ca/common_widget/CustomButton.dart';
+import 'package:flutter_huntfish_ca/common_widget/CustomFilledButton.dart';
 import 'package:flutter_huntfish_ca/i18n/strings.g.dart';
 
+import '../common_widget/CustomOutlineButton.dart';
+
 class Login extends StatelessWidget {
-  const Login({super.key});
+  final Function? next;
+  const Login({super.key, this.next});
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +15,24 @@ class Login extends StatelessWidget {
     return Column(
       children: [
         Expanded(
-          child: Image.asset(
-            "assets/images/login_splash.jpg",
-            height: screenSize.height * 0.5,
-            width: double.infinity,
-            fit: BoxFit.cover,
+          child: Stack(
+            alignment: Alignment.topCenter,
+            children: [
+              Image.asset(
+                "assets/images/login_splash.jpg",
+                height: screenSize.height * 0.5,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 30),
+                child: Image.asset(
+                  "assets/images/icon.png",
+                  width: 90,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ],
           ),
         ),
         Container(
@@ -32,38 +48,42 @@ class Login extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              Divider(
+              const Divider(
                 color: Colors.black,
                 endIndent: 320,
               ),
-              Text(
+              const Text(
                 "Welcome to CDFW's Online License Sales and Services",
                 style: TextStyle(
                   fontSize: 18,
                 ),
               ),
-              CustomButton(
-                onPressed: () {},
+              const SizedBox(
+                height: 10,
+              ),
+              CustomFilledButton(
+                onPressed: () {
+                  next!();
+                },
                 text: "Sign In",
                 padding: const EdgeInsets.symmetric(vertical: 15),
                 margin: const EdgeInsets.symmetric(vertical: 10),
                 width: double.infinity,
-                // backgroundColor: Colors.black,
-                // foregroundColor: Colors.white,
               ),
-              CustomButton(
+              SizedBox(
+                height: 10,
+              ),
+              CustomOutlineButton(
                 onPressed: () {},
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(vertical: 15),
                 text: "Create Account",
-                // backgroundColor: Colors.white,
-                // foregroundColor: Colors.black,
               ),
             ],
           ),
         ),
         SizedBox(
-          height: 40,
+          height: 50,
         )
       ],
     );

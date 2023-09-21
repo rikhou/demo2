@@ -14,48 +14,57 @@ class HomeContainer extends StatefulWidget {
 class _HomeContainerState extends State<HomeContainer> {
   int _currentPage = 0;
 
+  next() {
+    setState(() {
+      if (_currentPage < 3) {
+        _currentPage++;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: <Widget>[
           IndexedStack(
             index: _currentPage,
             children: <Widget>[
-              Login(),
-              SignIn(),
-              Location(),
+              Login(next: next),
+              SignIn(next: next),
+              Location(next: next),
               Home(),
             ],
           ),
-          Positioned(
-            bottom: 16,
-            right: 16,
-            child: OutlinedButton(
-              child: Text('Next'),
-              onPressed: () {
-                setState(() {
-                  if (_currentPage < 3) {
-                    _currentPage++;
-                  }
-                });
-              },
-            ),
-          ),
-          Positioned(
-            bottom: 16,
-            left: 16,
-            child: OutlinedButton(
-              child: Text('Previous'),
-              onPressed: () {
-                setState(() {
-                  if (_currentPage > 0) {
-                    _currentPage--;
-                  }
-                });
-              },
-            ),
-          ),
+          // Positioned(
+          //   bottom: 16,
+          //   right: 16,
+          //   child: OutlinedButton(
+          //     child: const Text('Next'),
+          //     onPressed: () {
+          //       setState(() {
+          //         if (_currentPage < 3) {
+          //           _currentPage++;
+          //         }
+          //       });
+          //     },
+          //   ),
+          // ),
+          // Positioned(
+          //   bottom: 16,
+          //   left: 16,
+          //   child: OutlinedButton(
+          //     child: Text('Previous'),
+          //     onPressed: () {
+          //       setState(() {
+          //         if (_currentPage > 0) {
+          //           _currentPage--;
+          //         }
+          //       });
+          //     },
+          //   ),
+          // ),
         ],
       ),
     );

@@ -1,16 +1,22 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import '../common_widget/CustomButton.dart';
+import '../common_widget/CustomFilledButton.dart';
 import '../common_widget/CustomText.dart';
 
-class SignIn extends StatelessWidget {
-  const SignIn({super.key});
+class SignIn extends StatefulWidget {
+  final Function? next;
+  const SignIn({super.key, this.next});
+
+  @override
+  State<SignIn> createState() => _SignInState();
+}
+
+class _SignInState extends State<SignIn> {
+  bool obscureText = true;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10, 100, 10, 20),
+      margin: EdgeInsets.fromLTRB(10, 80, 10, 20),
       child: Column(
         children: [
           const Text(
@@ -30,12 +36,16 @@ class SignIn extends StatelessWidget {
           CustomeText(
             label: "Password",
             hintText: "Please Entry",
-            obscureText: true,
-            suffix: TextButton(
-              onPressed: () {},
-              child: const Text(
-                "Show",
-                style: TextStyle(fontSize: 14),
+            obscureText: obscureText,
+            suffix: SizedBox(
+              height: 35,
+              child: TextButton(
+                onPressed: () {
+                  setState(() {
+                    obscureText = !obscureText;
+                  });
+                },
+                child: const Text("Show"),
               ),
             ),
           ),
@@ -51,8 +61,10 @@ class SignIn extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          CustomButton(
-            onPressed: () {},
+          CustomFilledButton(
+            onPressed: () {
+              this.widget.next!();
+            },
             text: "Sign In",
             padding: const EdgeInsets.symmetric(vertical: 15),
             margin: const EdgeInsets.symmetric(vertical: 10),
@@ -64,7 +76,12 @@ class SignIn extends StatelessWidget {
               const Text("Don't have an account?"),
               TextButton(onPressed: () {}, child: const Text("Create Account"))
             ],
-          )
+          ),
+          Expanded(
+            child: SizedBox(
+              height: 10,
+            ),
+          ),
         ],
       ),
     );

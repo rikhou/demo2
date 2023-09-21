@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
-import '../common_widget/CustomButton.dart';
+import '../common_widget/CustomFilledButton.dart';
+import '../common_widget/CustomOutlineButton.dart';
 
 class Location extends StatelessWidget {
-  const Location({super.key});
+  final Function? next;
+  const Location({super.key, this.next});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10, 100, 10, 20),
+      padding: EdgeInsets.fromLTRB(10, 80, 10, 20),
+      // color: Colors.amber,
       child: Column(
         children: [
           const Text(
@@ -19,8 +22,8 @@ class Location extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 10),
             child: const Divider(
               thickness: 1,
-              indent: 150,
-              endIndent: 150,
+              indent: 180,
+              endIndent: 180,
               color: Colors.black,
             ),
           ),
@@ -28,26 +31,32 @@ class Location extends StatelessWidget {
             "Enable location to get a better experience and features catered specifically to your location.",
             textAlign: TextAlign.center,
           ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(80),
-              color: Colors.white,
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(120),
+                color: Colors.white,
+              ),
+              margin: EdgeInsets.symmetric(vertical: 80),
+              padding: EdgeInsets.all(50),
+              child: Image.asset("assets/images/location.png",
+                  width: 80, height: 80),
             ),
-            margin: EdgeInsets.symmetric(vertical: 20),
-            padding: EdgeInsets.all(40),
-            child: Image.asset("assets/images/location.png",
-                width: 80, height: 80),
           ),
-          CustomButton(
-            onPressed: () {},
-            text: "Sign In",
+          CustomFilledButton(
+            onPressed: () {
+              next!();
+            },
+            text: "Turn on Location",
             padding: const EdgeInsets.symmetric(vertical: 15),
             margin: const EdgeInsets.symmetric(vertical: 10),
             width: double.infinity,
           ),
-          CustomButton(
-            onPressed: () {},
-            text: "Sign In",
+          CustomOutlineButton(
+            onPressed: () {
+              next!();
+            },
+            text: "Not Now",
             padding: const EdgeInsets.symmetric(vertical: 15),
             margin: const EdgeInsets.symmetric(vertical: 10),
             width: double.infinity,

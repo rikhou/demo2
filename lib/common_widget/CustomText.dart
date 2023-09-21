@@ -5,6 +5,7 @@ class CustomeText extends StatelessWidget {
   final String? hintText;
   final bool obscureText;
   final Widget? suffix;
+  final TextEditingController? controller;
 
   const CustomeText({
     super.key,
@@ -12,6 +13,7 @@ class CustomeText extends StatelessWidget {
     this.hintText,
     this.obscureText = false,
     this.suffix,
+    this.controller,
   });
 
   @override
@@ -22,14 +24,18 @@ class CustomeText extends StatelessWidget {
           label,
           style: TextStyle(fontSize: 16),
         ),
-        TextField(
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            contentPadding: EdgeInsets.all(5),
-            hintText: hintText,
-            suffix: suffix,
+        Container(
+          margin: EdgeInsets.symmetric(vertical: 5),
+          child: TextField(
+            controller: controller,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              contentPadding: EdgeInsets.symmetric(horizontal: 10),
+              hintText: hintText,
+              suffix: suffix,
+            ),
+            obscureText: obscureText,
           ),
-          obscureText: obscureText,
         ),
       ]),
     );
