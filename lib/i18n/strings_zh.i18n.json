@@ -1,6 +1,10 @@
 {
   "lifeLife": "户外生活",
   "app": {
-    "title": "Flutter 示例"
+    "title": "Flutter 示例",
+    "greeting": "Welcome, $name!"
+  },
+  "signIn": {
+    "signIn": "Sign In"
   }
 }

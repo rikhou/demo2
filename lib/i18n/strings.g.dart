@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 4 (2 per locale)
+/// Strings: 8 (4 per locale)
 ///
-/// Built on 2023-09-10 at 09:36 UTC
+/// Built on 2023-09-25 at 07:24 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -152,6 +152,7 @@ class _StringsEn implements BaseTranslations<AppLocale, _StringsEn> {
 	// Translations
 	String get lifeLife => 'Live Life Outside';
 	late final _StringsAppEn app = _StringsAppEn._(_root);
+	late final _StringsSignInEn signIn = _StringsSignInEn._(_root);
 }
 
 // Path: app
@@ -162,6 +163,17 @@ class _StringsAppEn {
 
 	// Translations
 	String get title => 'Flutter Demo';
+	String greeting({required Object name}) => 'Welcome, ${name}!';
+}
+
+// Path: signIn
+class _StringsSignInEn {
+	_StringsSignInEn._(this._root);
+
+	final _StringsEn _root; // ignore: unused_field
+
+	// Translations
+	String get signIn => 'Sign In';
 }
 
 // Path: <root>
@@ -191,6 +203,7 @@ class _StringsZh implements _StringsEn {
 	// Translations
 	@override String get lifeLife => '户外生活';
 	@override late final _StringsAppZh app = _StringsAppZh._(_root);
+	@override late final _StringsSignInZh signIn = _StringsSignInZh._(_root);
 }
 
 // Path: app
@@ -201,6 +214,17 @@ class _StringsAppZh implements _StringsAppEn {
 
 	// Translations
 	@override String get title => 'Flutter 示例';
+	@override String greeting({required Object name}) => 'Welcome, ${name}!';
+}
+
+// Path: signIn
+class _StringsSignInZh implements _StringsSignInEn {
+	_StringsSignInZh._(this._root);
+
+	@override final _StringsZh _root; // ignore: unused_field
+
+	// Translations
+	@override String get signIn => 'Sign In';
 }
 
 /// Flat map(s) containing all translations.
@@ -211,6 +235,8 @@ extension on _StringsEn {
 		switch (path) {
 			case 'lifeLife': return 'Live Life Outside';
 			case 'app.title': return 'Flutter Demo';
+			case 'app.greeting': return ({required Object name}) => 'Welcome, ${name}!';
+			case 'signIn.signIn': return 'Sign In';
 			default: return null;
 		}
 	}
@@ -221,6 +247,8 @@ extension on _StringsZh {
 		switch (path) {
 			case 'lifeLife': return '户外生活';
 			case 'app.title': return 'Flutter 示例';
+			case 'app.greeting': return ({required Object name}) => 'Welcome, ${name}!';
+			case 'signIn.signIn': return 'Sign In';
 			default: return null;
 		}
 	}

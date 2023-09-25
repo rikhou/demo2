@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_huntfish_ca/common_widget/CustomFilledButton.dart';
-import 'package:flutter_huntfish_ca/i18n/strings.g.dart';
 
+import '../common_widget/CustomFilledButton.dart';
 import '../common_widget/CustomOutlineButton.dart';
+import '../i18n/strings.g.dart';
 
 class Login extends StatelessWidget {
   final Function? next;

@@ -1,7 +1,8 @@
 {
   "lifeLife": "Live Life Outside",
   "app": {
-    "title": "Flutter Demo"
+    "title": "Flutter Demo",
+    "greeting": "Welcome, $name!"
   },
   "signIn": {
     "signIn": "Sign In"

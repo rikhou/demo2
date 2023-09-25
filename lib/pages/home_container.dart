@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'onboarding_location.dart';
-import 'home.dart';
+import 'home/home.dart';
 import 'login.dart';
 import 'signin.dart';
 
