@@ -5,8 +5,20 @@ class HomeTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("home"),
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "My License",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+            ),
+            TextButton(onPressed: () {}, child: Text("View All Licenses"))
+          ],
+        ),
+        Text("Discovery"),
+      ],
     );
   }
 }

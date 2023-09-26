@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../common_widget/CustomBottomNavigation.dart';
 import '../../i18n/strings.g.dart';
+import 'home_drawer.dart';
 import 'home_tab.dart';
 import 'me_tab.dart';
 import 'license_tab.dart';
@@ -24,37 +25,51 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         leading: Container(
-          margin: const EdgeInsets.only(top: 25),
+          margin: EdgeInsets.symmetric(vertical: 10),
           width: 10,
           child: Image.asset(
             "assets/images/icon.png",
-            fit: BoxFit.contain,
+            fit: BoxFit.scaleDown,
           ),
         ),
       ),
-      body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              color: Colors.white,
-              child: Text(
-                t.app.greeting(name: 'ABC'),
-                style: const TextStyle(
-                  fontSize: 26,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            color: Colors.white,
+            child: Text(
+              t.app.greeting(name: 'YAN YANA'),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+            ),
+          ),
+          Expanded(
+            child: Container(
+                decoration: BoxDecoration(
+                  color: Color(0xFFF0F3F4),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withAlpha(25),
+                      offset: const Offset(0, 2),
+                      blurRadius: 8,
+                      spreadRadius: 2,
+                    ),
+                  ],
+                  border: Border(
+                    top: BorderSide(
+                      color: Colors.black,
+                      width: 1.0,
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            const Divider(
-              thickness: 1,
-              color: Colors.black,
-            ),
-            Container(color: Color(0xFFF0F3F4), child: _currentBody),
-          ],
-        ),
+                alignment: Alignment.topLeft,
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: _currentBody),
+          ),
+        ],
       ),
-      endDrawer: Drawer(),
+      endDrawer: HomeDrawer(),
       bottomNavigationBar: CustomBottomNavigation(
           onTap: (index) {
             print(index);
@@ -78,19 +93,20 @@ class _HomeState extends State<Home> {
           currentIndex: _index,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined),
-              activeIcon: Icon(Icons.home),
+              icon: Icon(Icons.home_outlined, color: Color(0xFF324755)),
+              activeIcon: Icon(Icons.home, color: Color(0xFF324755)),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(FontAwesomeIcons.idCard),
-              activeIcon: Icon(FontAwesomeIcons.solidIdCard),
+              icon: Icon(FontAwesomeIcons.idCard, color: Color(0xFF324755)),
+              activeIcon:
+                  Icon(FontAwesomeIcons.solidIdCard, color: Color(0xFF324755)),
               label: 'Licenses',
             ),
             BottomNavigationBarItem(
               // icon: Icon(Icons.person_outlined),
-              icon: Icon(Icons.person_outlined),
-              activeIcon: Icon(Icons.person),
+              icon: Icon(Icons.person_outlined, color: Color(0xFF324755)),
+              activeIcon: Icon(Icons.person, color: Color(0xFF324755)),
               label: 'Me',
             ),
           ]),
