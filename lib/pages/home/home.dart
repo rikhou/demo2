@@ -84,8 +84,6 @@ class _HomeState extends State<Home> {
                 _currentBody = MeTab();
                 break;
             }
-            // _currentBody =
-            //     Container(child: _currentBody, color: Color(0xFFF0F3F4));
             setState(() {
               _index = index;
             });
