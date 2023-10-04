@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'onboarding_location.dart';
-import 'home/home.dart';
+import 'home_page/home_page.dart';
 import 'login.dart';
 import 'signin.dart';
 
@@ -34,7 +34,7 @@ class _HomeContainerState extends State<HomeContainer> {
               Login(next: next),
               SignIn(next: next),
               Location(next: next),
-              Home(),
+              HomePage(),
             ],
           ),
           // Positioned(

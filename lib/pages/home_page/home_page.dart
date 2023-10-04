@@ -3,19 +3,19 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../common_widget/CustomBottomNavigation.dart';
 import '../../i18n/strings.g.dart';
-import 'home_drawer.dart';
-import 'home_tab.dart';
+import 'main_drawer.dart';
+import 'home_tab/home_tab.dart';
 import 'me_tab.dart';
 import 'license_tab.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomeState extends State<Home> {
+class _HomePageState extends State<HomePage> {
   var _index = 0;
   Widget _currentBody = HomeTab();
 
@@ -97,8 +97,7 @@ class _HomeState extends State<Home> {
             ),
             BottomNavigationBarItem(
               icon: Icon(FontAwesomeIcons.idCard, color: Color(0xFF324755)),
-              activeIcon:
-                  Icon(FontAwesomeIcons.solidIdCard, color: Color(0xFF324755)),
+              activeIcon: Icon(FontAwesomeIcons.solidIdCard, color: Color(0xFF324755)),
               label: 'Licenses',
             ),
             BottomNavigationBarItem(
