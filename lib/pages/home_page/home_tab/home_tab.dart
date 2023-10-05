@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_huntfish_ca/pages/home_page/home_tab/home_license_empty.dart';
 
 import '../../../models/weather_model.dart';
 import '../../../services/weather_service.dart';
@@ -15,8 +16,7 @@ class HomeTab extends StatefulWidget {
 
 class _HomeTabState extends State<HomeTab> {
   Weather? weather;
-  final GlobalKey<RefreshIndicatorState> _indicatorKey =
-      GlobalKey<RefreshIndicatorState>();
+  final GlobalKey<RefreshIndicatorState> _indicatorKey = GlobalKey<RefreshIndicatorState>();
 
   @override
   initState() {
@@ -42,9 +42,15 @@ class _HomeTabState extends State<HomeTab> {
         child: ListView(
           children: [
             HomeLicense(),
-            weather != null
-                ? HomeWeather(weather: weather!)
-                : const HomeWeatherSkeleton(),
+            // HomeLicenseEmpty(),
+            Container(
+              margin: const EdgeInsets.only(top: 25, bottom: 10),
+              child: const Text(
+                "Discovery",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
+            ),
+            weather != null ? HomeWeather(weather: weather!) : const HomeWeatherSkeleton(),
           ],
         ));
   }

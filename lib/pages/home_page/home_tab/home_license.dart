@@ -18,16 +18,19 @@ class _HomeLicenseState extends State<HomeLicense> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Text("My License", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
-            TextButton(onPressed: () {}, child: Text("View All Licenses"))
-          ],
+        Container(
+          margin: EdgeInsets.only(top: 10, bottom: 5),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text("My License", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              TextButton(onPressed: () {}, child: Text("View All Licenses"))
+            ],
+          ),
         ),
         CarouselSlider(
           options: CarouselOptions(
-            height: 180,
+            height: 170,
             enableInfiniteScroll: false,
             viewportFraction: 0.8,
             enlargeCenterPage: true,
@@ -49,6 +52,7 @@ class _HomeLicenseState extends State<HomeLicense> {
             );
           }).toList(),
         ),
+        SizedBox(height: 5),
         Text("${currentIndex + 1} of 5"),
       ],
     );
