@@ -71,10 +71,7 @@ class HomeWeather extends StatelessWidget {
                 ),
               ),
               Text(weather.conditionText, style: const TextStyle(fontSize: 14.0)),
-              const Divider(
-                thickness: 1,
-                color: Colors.black12,
-              ),
+              const Divider(thickness: 1, color: Colors.black12),
               Container(
                   margin: const EdgeInsets.only(top: 15),
                   alignment: Alignment.center,

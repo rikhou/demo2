@@ -34,10 +34,7 @@ class HomeWeatherSkeleton extends StatelessWidget {
               height: 15, width: 80, margin: const EdgeInsets.only(top: 15, bottom: 15)),
           renderSkeletonItem(height: 15, margin: const EdgeInsets.only(bottom: 20)),
           renderSkeletonItem(height: 15, width: 80, margin: const EdgeInsets.only(bottom: 5)),
-          const Divider(
-            thickness: 1,
-            color: Colors.black12,
-          ),
+          const Divider(thickness: 1, color: Colors.black12),
           Container(
               margin: const EdgeInsets.only(top: 15),
               alignment: Alignment.center,
