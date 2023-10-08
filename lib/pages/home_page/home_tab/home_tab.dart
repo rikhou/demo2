@@ -32,7 +32,9 @@ class _HomeTabState extends State<HomeTab> {
       weather = null;
     });
     weather = await getWeather();
-    setState(() {});
+    if (mounted) {
+      setState(() {});
+    }
   }
 
   @override
@@ -62,7 +64,7 @@ class _HomeTabState extends State<HomeTab> {
                   HomeLicense(),
                   // HomeLicenseEmpty(),
                   Container(
-                    margin: const EdgeInsets.only(top: 25, bottom: 10),
+                    margin: const EdgeInsets.only(top: 15, bottom: 5),
                     child: const Text(
                       "Discovery",
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),

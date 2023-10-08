@@ -29,7 +29,7 @@ class _LicenseTabState extends State<LicenseTab> {
           ),
         ),
         Container(
-          margin: EdgeInsets.only(top: 20),
+          margin: EdgeInsets.only(top: 10),
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,7 +56,7 @@ class _LicenseTabState extends State<LicenseTab> {
                 ]),
               ),
               Container(
-                margin: const EdgeInsets.only(top: 20, bottom: 10),
+                margin: const EdgeInsets.only(top: 10, bottom: 10),
                 child: const Text("To Internet Sales",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
               ),

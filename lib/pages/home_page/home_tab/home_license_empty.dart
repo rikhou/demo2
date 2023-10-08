@@ -11,20 +11,21 @@ class HomeLicenseEmpty extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-            margin: EdgeInsets.symmetric(vertical: 20),
+            margin: const EdgeInsets.symmetric(vertical: 5),
             child: const Text("My License",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500))),
         DottedBorder(
           borderType: BorderType.RRect,
           radius: const Radius.circular(12),
           color: Colors.black,
-          dashPattern: [3, 3],
+          dashPattern: const [3, 3],
           strokeWidth: 1,
           child: Container(
-            padding: EdgeInsets.symmetric(vertical: 20),
+            padding: const EdgeInsets.symmetric(vertical: 20),
             width: double.infinity,
             child: Column(children: [
-              Text("No license found", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+              const Text("No license found",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
               Container(
                 child: Text("Purchase your hunting or fishing license now",
                     style: TextStyle(fontSize: 12)),

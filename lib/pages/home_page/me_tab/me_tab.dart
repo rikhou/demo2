@@ -11,8 +11,8 @@ class MeTab extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding: EdgeInsets.only(top: 40, left: 20),
-          color: Color(0xFF324755),
+          padding: const EdgeInsets.only(top: 40, left: 20),
+          color: const Color(0xFF324755),
           width: double.infinity,
           height: 140,
           child: const Column(
@@ -25,39 +25,40 @@ class MeTab extends StatelessWidget {
           ),
         ),
         Container(
-          margin: EdgeInsets.only(top: 20),
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          margin: const EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Profile Related", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              const Text("Profile Related",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
               CustomCard(
                 child: ListTile(
-                  title: Text('Manage Profiles', style: TextStyle(fontSize: 14)),
-                  trailing: Icon(Icons.keyboard_arrow_right),
+                  title: const Text('Manage Profiles', style: TextStyle(fontSize: 14)),
+                  trailing: const Icon(Icons.keyboard_arrow_right),
                   onTap: () => {},
                 ),
               ),
-              Text("Account", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              const Text("Account", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
               CustomCard(
                 child: Column(children: [
                   ListTile(
-                    title: Text('Change Password', style: TextStyle(fontSize: 14)),
-                    trailing: Icon(Icons.keyboard_arrow_right),
+                    title: const Text('Change Password', style: TextStyle(fontSize: 14)),
+                    trailing: const Icon(Icons.keyboard_arrow_right),
                     onTap: () => {},
                   ),
                   ListTile(
-                    title: Text('Delete Account', style: TextStyle(fontSize: 14)),
-                    trailing: Icon(Icons.keyboard_arrow_right),
+                    title: const Text('Delete Account', style: TextStyle(fontSize: 14)),
+                    trailing: const Icon(Icons.keyboard_arrow_right),
                     onTap: () => {},
                   ),
                 ]),
               ),
-              Text("Security", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              const Text("Security", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
               CustomCard(
                 child: ListTile(
-                  title: Text('Qucik Access Setting', style: TextStyle(fontSize: 14)),
-                  trailing: Icon(Icons.keyboard_arrow_right),
+                  title: const Text('Qucik Access Setting', style: TextStyle(fontSize: 14)),
+                  trailing: const Icon(Icons.keyboard_arrow_right),
                   onTap: () => {},
                 ),
               ),

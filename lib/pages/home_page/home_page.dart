@@ -16,14 +16,18 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var _index = 0;
-  Widget _currentBody = HomeTab();
+  List tabs = [
+    HomeTab(),
+    LicenseTab(),
+    MeTab(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: Container(
-          margin: EdgeInsets.symmetric(vertical: 10),
+          margin: const EdgeInsets.symmetric(vertical: 10),
           width: 10,
           child: Image.asset(
             "assets/images/icon.png",
@@ -31,35 +35,25 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: Container(
-          decoration: BoxDecoration(
-            color: const Color(0xFFF0F3F4),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withAlpha(25),
-                offset: const Offset(0, 2),
-                blurRadius: 8,
-                spreadRadius: 2,
-              ),
-            ],
-          ),
-          alignment: Alignment.topLeft,
-          child: _currentBody),
+      body: SafeArea(
+        child: Container(
+            decoration: BoxDecoration(
+              color: const Color(0xFFF0F3F4),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withAlpha(25),
+                  offset: const Offset(0, 2),
+                  blurRadius: 8,
+                  spreadRadius: 2,
+                ),
+              ],
+            ),
+            alignment: Alignment.topLeft,
+            child: tabs[_index]),
+      ),
       endDrawer: HomeDrawer(),
       bottomNavigationBar: CustomBottomNavigation(
           onTap: (index) {
-            print(index);
-            switch (index) {
-              case 0:
-                _currentBody = HomeTab();
-                break;
-              case 1:
-                _currentBody = LicenseTab();
-                break;
-              case 2:
-                _currentBody = MeTab();
-                break;
-            }
             setState(() {
               _index = index;
             });

@@ -19,7 +19,7 @@ class _HomeLicenseState extends State<HomeLicense> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          margin: EdgeInsets.only(top: 10, bottom: 5),
+          margin: EdgeInsets.symmetric(vertical: 5),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
